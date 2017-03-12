@@ -10,17 +10,9 @@ mongoose.connect(config.mongo, (err) => {
   }
 })
 
-// let user = new User({ username: 'arielle' })
-// user.save((err) => {
-//   if (err) {
-//     console.log(err)
-//   }
-// })
 
-let type = new UserType({ name: 'admin' })
-type.save((err) => {
-  if (err) {
-    console.log(err)
-  }
-})
+
+
+
+
 
