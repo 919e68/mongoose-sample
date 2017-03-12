@@ -1,0 +1,23 @@
+{
+  "name": "mongoose-sample",
+  "version": "1.0.0",
+  "description": "sample mongoose models",
+  "main": "index.js",
+  "dependencies": {
+    "mongoose": "^4.8.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/konekred/mongoose-sample.git"
+  },
+  "author": "Wilson Anciro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konekred/mongoose-sample/issues"
+  },
+  "homepage": "https://github.com/konekred/mongoose-sample#readme"
+}
