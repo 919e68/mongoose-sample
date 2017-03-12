@@ -48,6 +48,8 @@ Promise.all(insertTypes).then((res) => {
 
   UserType.find((err, types) => {
     let insertUsers = users.map((user) => {
+      
+
       return new Promise((resolve, reject) => {
         let typeId = types[Math.floor(Math.random() * types.length)]._id
         let newUser = new User(user)
@@ -60,7 +62,7 @@ Promise.all(insertTypes).then((res) => {
               errors.push({ key: field, msg: err.errors[field].message })
             }
           }
-          
+
           resolve({ ok: err? false : true, data: newUser, errors: errors })
         })
       })

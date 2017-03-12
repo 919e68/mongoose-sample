@@ -36,6 +36,7 @@ const User = new Schema({
       'email is required'
     ],
     validate: [
+      validator.isEmail({ message: 'invalid email' }),
       {
         validator: function(email, callback) {
           let query = { email: email }
@@ -64,7 +65,7 @@ const User = new Schema({
       validator.isLength({ message: 'password must be atleast 8 characters' }, 8)
     ]
   },
-  firstname: {
+  firstName: {
     type: String,
     required: [
       true,
@@ -84,7 +85,7 @@ const User = new Schema({
     exists: true,
     required: [
       true,
-      'type is required'
+      'type id is required'
     ]
   }
 })

@@ -10,6 +10,25 @@ mongoose.connect(config.mongo, (err) => {
   }
 })
 
+UserType.findOne((err, type) => {
+  if (type) {
+    console.log(err, type)
+
+    let user = new User({
+      username: 'arielle',
+      email: 'elleira@gmail.com',
+      password: 'ABC12abc',
+      firstName: 'Arielle Marie',
+      lastName: 'Andrade',
+      typeId: type._id
+    })
+
+    user.save((err, user) => {
+      
+      console.log(err, user)
+    })
+  }
+})
 
 
 
