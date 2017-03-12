@@ -1,4 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
+import validator  from 'mongoose-validators'
+mongoose.plugin(require('mongoose-exists'))
 
 const User = new Schema({
   username: {
@@ -6,26 +8,30 @@ const User = new Schema({
     required: [
       true,
       'username is required'
+    ],
+    validate: [
+      validator.isLength({ message: 'username must be atleast 6 characters' }, 6, 50)
     ]
   },
   email: {
     type: String,
-    match: [
-
-    ]
   },
   password: {
-    type: String,
-    required: [
-      true,
-      'password is required'
-    ]
+    type: String
   },
   firstname: {
-    type: String,
+    type: String
+  },
+  lastName: {
+    type: String 
+  },
+  typeId: {
+    type: Schema.Types.ObjectId,
+    ref: 'UserType',
+    exists: true,
     required: [
       true,
-      'first name is required'
+      'type is required'
     ]
   }
 })
